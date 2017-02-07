@@ -4,10 +4,6 @@ git init
 git remote add origin https://github.com/guillaumeRG/Masteriales_Modelisation.git
 git pull origin master
 
-ou
-
-git clone https://github.com/guillaumeRG/Masteriales_Modelisation.git
-
 -- pour push --
 git add *
 git commit -m "commentaire commit"
