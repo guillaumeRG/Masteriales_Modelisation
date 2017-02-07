@@ -3,13 +3,41 @@ negociateFunction()
 negociateFunction <- function(){
   round<-1
   initFunction()
-  print(P0)
+  payOffMatrix<-payOffMatrixFunction(ScP(P0),ScQ(Q0),SscP(P0),SscQ(Q0))
+  current_equilibrium<-findNashEquilibrium(payOffMatrix)
+  Pe<-Po
+  Qe<- Qo
+  
+  payoffMatrix <- payOffMatrixFunction(ScP(Pe),ScQ(Qe),SscP(Pe),SscQ(Qe))
+  
+  return(0)
+}
+ScP <- function(P){
+  return(0) 
+}
+ScQ <- function(Q){
+  return(0) 
+}
+SscP <- function(P){
+  return(0)
+}
+SscQ <- function(Q){
+  return(0) 
+}
+
+updateOffer <- function(Pc,Qc){
+  return(0)
+}
+findNashEquilibrium<- function(payOffMatrix){
+  return(0)
+}
+payOffMatrixFunction<- function(Sc_P,Sc_Q,Ssp_P,Ssp_Q){
   return(0)
 }
 
 initFunction<- function(){
-  P0<<-0
-  Q0<<-0
+  Po<<-0
+  Qo<<-0
   Qmax<<-0
   Pmax<<-0
   Qmin<<-0
