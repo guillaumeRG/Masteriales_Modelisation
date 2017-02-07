@@ -15,3 +15,8 @@ git push
 
 -- faites un pull avant de faire votre 1er commit/push --
 -- faites des backups sur votre pc de ce que vous faites--
+
+-- si vous vous etes trompé de repertoire --
+git remote rm origin
+git init
+
