@@ -8,4 +8,10 @@ git push -u origin master
 git remote add origin https://github.com/guillaumeRG/Masteriales_Modelisation.git
 git push -u origin master
 
--- faites un pull avant de faire votre 1er commit --
+-- pour push --
+git add *
+git commit -m "commentaire commit"
+git push
+
+-- faites un pull avant de faire votre 1er commit/push --
+-- faites des backups sur votre pc de ce que vous faites--
