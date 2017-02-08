@@ -3,13 +3,13 @@ negociateFunction()
 negociateFunction <- function(){
   round<-1
   initFunction()
-  payOffMatrix<-payOffMatrixFunction(ScP(P0),ScQ(Q0),SscP(P0),SscQ(Q0))
+  payOffMatrix<-payOffMatrixFunction(ScP(P0),ScQ(Q0),SscP(P0),SscQ(Q0),Po)
   current_equilibrium<-findNashEquilibrium(payOffMatrix)
   Pe<-Po
   Qe<-Qo
   Pn<-updateOfferP(Pc)
   Qn<-updateOfferQ(Qc)
-  payoffMatrix <- payOffMatrixFunction(ScP(Pe),ScQ(Qe),SscP(Pe),SscQ(Qe))
+  payoffMatrix <- payOffMatrixFunction(ScP(Pe),ScQ(Qe),SscP(Pe),SscQ(Qe),Po,DELTA,delta)
   next_equilibrium<- findNashEquilibrium(payOffMatrix)
   current_satisfactionDiff<-findSatisfactionDiff(current_equilibrium)
   next_satisfactionDiff<-findSatisfactionDiff(next_equilibrium)
@@ -21,7 +21,7 @@ negociateFunction <- function(){
     current_equilibrium<-next_equilibrium
     Pn <- updateOfferP(Pc)
     Qn <- updateOfferQ(Qn)
-    payoffMatrix <- payOffMatrixFunction(ScP(Pe),ScQ(Qe),SscP(Pe),SscQ(Qe))
+    payoffMatrix <- payOffMatrixFunction(ScP(Pe),ScQ(Qe),SscP(Pe),SscQ(Qe),DELTA,delta)
     next_equilibrium<- findNashEquilibrium(payOffMatrix)
     current_satisfactionDiff<-findSatisfactionDiff(current_equilibrium)
     next_satisfactionDiff<-findSatisfactionDiff(next_equilibrium)
@@ -51,10 +51,18 @@ updateOfferQ <- function(Qc){
 findNashEquilibrium<- function(payOffMatrix){
   return(0)
 }
-payOffMatrixFunction<- function(Sc_P,Sc_Q,Ssp_P,Ssp_Q){
+payOffMatrixFunction<- function(Sc_P,Sc_Q,Ssp_P,Ssp_Q,Po,DELTA,delta){
+  
+  payOffMatrix <- as.matrix(nrow=3,ncol=3)
+  #c ,
+  payOffMatrix[0,0]<-{}
+  payOffMatrix[0,0]<-
+  payOffMatrix[0,0]<-  
+  payOffMatrix[0,0]<-
   return(0)
 }
 findSatisfactionDiff <- function(equilibrium){
+
   return(0)
 }
 initFunction<- function(){
