@@ -1,0 +1,51 @@
+package masteriales;
+
+import java.lang.Math;
+
+public class ADJMatrix {
+	static int[][] distMat= new int[9][2];
+	Coord adjMat[][];
+	public static void main(String[] args) {
+		ADJMatrix obj = new ADJMatrix();
+		obj.exempleMatrix();
+		System.out.println(distMat[0].length);
+		obj.buildADJMat();
+		System.out.println(obj.adjMat[1][1].dM);
+	}
+	public void exempleMatrix(){
+		for(int i=0;i<=8;i++){
+			distMat[i][0]=i;
+			distMat[i][1]=i;
+			
+		}
+	}
+	public void getMatrice(int mat[][]){
+		this.distMat=mat;	
+		
+	}
+	public void buildADJMat(){
+		int currentX=0;
+		int currentY=0;
+		Coord[][] adjMatlocal= new Coord[8][8];
+	
+		for(int i=0;i<=distMat.length;i++){
+			
+			this.distMat[i][0] = currentX;
+			this.distMat[i][1] = currentY;
+			
+			for(int j=0;j<=distMat.length;j++){
+				
+				if(j!=i){
+					
+					adjMatlocal[i][j].x=Math.abs(currentX-distMat[j][0]);
+					adjMatlocal[i][j].y=Math.abs(currentY-distMat[j][1]);
+					adjMatlocal[i][j].dM=adjMatlocal[i][j].x+adjMatlocal[i][j].y;
+				}
+			
+				
+			}
+		}
+		adjMat=adjMatlocal;
+
+	}
+}

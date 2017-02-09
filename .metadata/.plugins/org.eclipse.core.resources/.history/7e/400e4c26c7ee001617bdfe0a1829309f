@@ -1,0 +1,7 @@
+package masteriales;
+
+public class Coord {
+	int x;
+	int y;
+	int dM;
+}

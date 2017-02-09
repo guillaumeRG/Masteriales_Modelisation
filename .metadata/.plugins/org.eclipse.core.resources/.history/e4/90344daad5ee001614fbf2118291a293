@@ -1,0 +1,95 @@
+package masteriales;
+
+import java.lang.Math;
+
+	
+public class ADJMatrix {
+	final static int NB_STATIONS =8;
+	static int[][] distMat= new int[NB_STATIONS][2];
+	static int[][] adjMat= new int[NB_STATIONS][2];
+	static int[][] voisins= new int[NB_STATIONS][2];
+	public static void main(String[] args) {
+		ADJMatrix obj = new ADJMatrix();
+		obj.exempleMatrix();
+		obj.buildADJMat();
+		for(int i=0;i<NB_STATIONS;i++){
+			for(int j = 0;j<=NB_STATIONS;j++){
+				System.out.print("Resultat "+i+" "+j+"  "+adjMat[i][j]);
+				System.out.println();
+			}
+		}
+		obj.getPointVoisin(adjMat);
+		for(int i=0;i<NB_STATIONS;i++){
+			for(int j = 0;j<NB_STATIONS;j++){
+				System.out.print("Voisins "+i+" "+j+"  "+voisins[i][j]);
+				System.out.println();
+			}
+		}
+	}
+	public void exempleMatrix(){
+		for(int i=0;i<NB_STATIONS;i++){
+			distMat[i][0]=i;
+			distMat[i][1]=i;
+			System.out.println("exemple : 0 1:"+distMat[i][0]+" "+distMat[i][1]);
+			
+		}
+	}
+	public void getMatrice(int mat[][]){
+		this.distMat=mat;	
+		
+	}
+	public void buildADJMat(){
+		int currentX=0;
+		int currentY=0;
+		int x;
+		int y;
+		int[][] adjMatlocal= new int[9][9];
+		for(int i=0;i<NB_STATIONS;i++){
+			
+			currentX=this.distMat[i][0] ;
+			currentY = this.distMat[i][1] ;
+			System.out.println(currentX);
+			for(int j=0;j<NB_STATIONS;j++){
+
+				x=Math.abs(currentX-distMat[j][0]);
+			
+				y=Math.abs(currentY-distMat[j][1]);
+				
+				adjMatlocal[i][j]=x+y;
+				
+			}
+		}
+		adjMat=adjMatlocal;
+
+	}
+
+	
+	public int[][] getPointVoisin(int MatriceAdj[][]){
+		
+		int voisin[][]= new int[8][4];
+		
+		int local = 0;
+		int station = 0;
+		
+		for( int i = 0; i < NB_STATIONS-1;i++){
+			for( int k = 0; k <= 3;k++){
+			
+				for(int j=0;j < NB_STATIONS-1;j++){
+					if(i!=j){
+						local= MatriceAdj[i][j];
+						station = j;
+						if(local<MatriceAdj[i][j+1]){
+						station=j+1;
+						}
+					
+					}
+					voisin[i][k]=station;
+				}
+				MatriceAdj[i][k]=999999999;
+				
+			}
+		}
+		return voisin;
+		
+	}
+}

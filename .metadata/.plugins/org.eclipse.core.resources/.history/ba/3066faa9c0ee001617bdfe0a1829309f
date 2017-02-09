@@ -1,0 +1,10 @@
+package masteriales;
+
+public class ADJMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

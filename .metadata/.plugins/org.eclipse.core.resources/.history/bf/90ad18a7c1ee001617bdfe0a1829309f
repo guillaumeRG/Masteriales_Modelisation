@@ -1,0 +1,14 @@
+package masteriales;
+
+public class ADJMatrix {
+
+	int[][] adjMat;
+	public static void main(String[] args) {
+		
+
+	}
+	public void getMatrice(int[][] mat){
+		this.adjMat=mat;		
+	}
+
+}
