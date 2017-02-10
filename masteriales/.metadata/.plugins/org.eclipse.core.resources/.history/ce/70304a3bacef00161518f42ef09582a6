@@ -1,0 +1,30 @@
+
+public class CalcNi {
+	final static int NB_USERS =2;
+	final static int Dmax =300;
+	
+	static int[][] coordMat= new int[NB_USERS][2];
+	
+	public float dist(Coord c){
+		float dist = 0;
+		return dist;
+	}
+	public void exempleMatrix(){
+		for(int i=0;i<NB_USERS;i++){
+			coordMat[i][0]=i+2;
+			coordMat[i][1]=i+2;
+			System.out.println("exemple Li : x y:"+coordMat[i][0]+" "+coordMat[i][1]);
+			
+		}
+	}
+	public int[][] calcNi(int[][] coordMat){
+		/* CALCUL DES VOISINS DANS UNE MATRICE NF*/
+		int Ni[][]= new int[8][];
+		
+		return null;
+		
+		
+		
+		
+	}
+}
