@@ -1,7 +1,0 @@
-
-public class CalcNi {
-	public float dist(Coord c){
-		float dist = 0;
-		return dist;
-	}
-}
